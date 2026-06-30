@@ -13,6 +13,8 @@ import Login from './components/Login.jsx'
 
 import Empresa from './components/empresa/Empresa.jsx'
 
+import Header from './components/header/Header.jsx'
+
 
 
 
@@ -48,10 +50,31 @@ render() {
     <div className="App">
         <div className="notif-container"></div>
 
+      
+
       <Router>
+
+       
+        
         <Routes>
           <Route path="/" element={<Login notificacion={this.notifiacion} />} />
-          <Route path="/empresa" element={<Empresa  notificacion={this.notifiacion}/>} />
+          {/* <Route path="/empresa" element={<Empresa  notificacion={this.notifiacion}/>} /> */}
+
+
+          {/* Tus compañeros irán agregando sus rutas aquí: */}
+          {/* <Route path="/clientes" element={<Clientes notificacion={this.notifiacion}/>} /> */}
+
+
+          <Route path="/empresa" element={
+      <>
+        <Header />
+        <div className="container mt-5"> {/* mt-5 da el espacio superior */}
+          <Empresa notificacion={this.notifiacion}/>
+        </div>
+      </>
+    } />
+
+          
         </Routes>
       </Router>
     </div>
