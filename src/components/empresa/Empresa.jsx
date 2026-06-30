@@ -250,7 +250,7 @@ cerrarModal = () => {
                     </div>
 
                    {this.state.mostrarModal && (
-                    <div className="modal-overlay" style={modalStyles.overlady}>
+                    <div className="modal-overlay" style={modalStyles.overlay}>
                         <div className="modal-content" style={modalStyles.content}>
                             <FormularioEmpresa
                                 empresaAEditar={this.state.empresaSeleccionada}
@@ -289,6 +289,7 @@ const modalStyles = {
         maxHeight: '90vh',
         overflowY: 'auto'
     }
-}
+};
+
 export default Empresa;
 
