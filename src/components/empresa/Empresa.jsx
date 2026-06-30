@@ -156,7 +156,7 @@ cerrarModal = () => {
                     
                     
 
-                                    <div className="col-10 position-absolute top-0 start-50 translate-middle-x">
+                                    <div className="container mt-4">
                         <h1 style={{ fontSize: '2.5rem',fontFamily: 'Arial, sans-serif', fontWeight: 'bold', color: '#007aff' }}>
                             Datos de Empresa
                             </h1>
@@ -292,4 +292,3 @@ const modalStyles = {
 };
 
 export default Empresa;
-
