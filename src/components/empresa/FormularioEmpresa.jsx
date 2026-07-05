@@ -3,7 +3,14 @@ import axios from 'axios';
 import { urlApi } from "../../services/apirest";
 //import { SoloLetras } from '../../utils/validaciones';
 
-const FormularioEmpresa = ({ empresaAEditar, onClose, onGuardar, notificacion, abrirModal, datoForaneo, idForaneo }) => {
+const FormularioEmpresa = ({ 
+  empresaAEditar,
+  onClose,
+  onGuardar,
+  notificacion,
+  abrirModal,
+  datoForaneo, 
+  idForaneo }) => {
 
   // 1. Estado inicial del formulario
   const [form, setForm] = useState({
