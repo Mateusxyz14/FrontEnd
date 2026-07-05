@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { urlApi } from "../../service/apirest";
+import { urlApi } from "../../services/apirest";
 import { confirm } from "../../components/Confirmation"; // Vite buscará automáticamente .jsx o .js
 import FormularioAlmacen from "../../components/almacen/FormularioAlmacen";
 
@@ -183,7 +183,7 @@ class Almacen extends React.Component {
           >
             <thead>
               <tr>
-                <th scope="col">ID Almacen</th>
+                <th scope="col">ID_Almacen</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Direccion</th>
                 <th scope="col">Ciudad</th>

@@ -14,6 +14,9 @@ const Header = () => {
             </li>
             {/* Aquí tus compañeros agregarán sus links después */}
             <li className="nav-item">
+              <Link className="nav-link" to="/almacen">Almacén</Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/clientes">Clientes</Link>
             </li>
           </ul>

@@ -13,6 +13,8 @@ import Login from './components/Login.jsx'
 
 import Empresa from './components/empresa/Empresa.jsx'
 
+import Almacen from './components/almacen/Almacen.jsx'
+
 import Header from './components/header/Header.jsx'
 
 
@@ -70,6 +72,16 @@ render() {
         <Header />
         <div className="container mt-5"> {/* mt-5 da el espacio superior */}
           <Empresa notificacion={this.notifiacion}/>
+        </div>
+      </>
+    } />
+
+    <Route path="/almacen" element={
+      <>
+        <Header />
+        <div className="container mt-5">
+          <Almacen notificacion={this.notifiacion}/>
+
         </div>
       </>
     } />

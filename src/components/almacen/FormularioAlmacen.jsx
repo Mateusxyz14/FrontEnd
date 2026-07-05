@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { urlApi } from "../../service/apirest";
+import { urlApi } from "../../services/apirest";
 //import { SoloLetras } from '../../utils/validaciones';
 
 const FormularioAlmacen = ({
