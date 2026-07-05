@@ -1,0 +1,158 @@
+/* Resets básicos y contenedor principal con fondo de pantalla */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  /* Reemplaza la URL por tu imagen local o link */
+  background: linear-gradient(rgba(44, 62, 80, 0.4), rgba(0, 0, 0, 0.3)), 
+              url('../assets/OIP.webp') no-repeat center center/cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Caja de login semi-transparente */
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px;
+  text-align: center;
+  color: #191818;
+  ;
+}
+
+.login-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.login-subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* Formulario e inputs */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group input:focus {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Icono para ver contraseña */
+.password-group {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  user-select: none;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+}
+
+/* Botón de ingreso principal */
+.btn-sign-in {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  background-color: #f3d1be; /* Color salmón/durazno pastel de la imagen */
+  color: #333333;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-sign-in:hover {
+  background-color: #e5beaa;
+}
+
+/* Opciones extras (Remember Me & Forgot) */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  padding: 0 5px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.remember-me input {
+  accent-color: #f3d1be;
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.forgot-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Divisor */
+.divider {
+  margin: 30px 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  letter-spacing: 1px;
+}
