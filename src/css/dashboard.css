@@ -1,0 +1,370 @@
+/* Layout General */
+.dashboard-layout {
+  display: flex;
+  background-color: #060608;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.dashboard-main {
+  margin-left: 260px; /* Anchura de la barra lateral */
+  flex-grow: 1;
+  padding: 40px;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  color: #64646c;
+  margin-bottom: 16px;
+}
+
+.breadcrumb span {
+  color: #94949c;
+}
+
+.header-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.main-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtitle {
+  grid-column: 1;
+  color: #94949c;
+  font-size: 0.95rem;
+  margin: 4px 0 0 0;
+}
+
+.action-buttons {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  gap: 12px;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #ff6b00;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: #16161a;
+  color: #ffffff;
+  border: 1px solid #2e2e35;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-secondary.sm {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+/* Buscador */
+.search-container {
+  margin-bottom: 32px;
+}
+
+.search-container input {
+  width: 100%;
+  background-color: #0c0c0e;
+  border: 1px solid #1a1a1e;
+  padding: 14px 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  outline: none;
+}
+
+/* Grid de Tarjetas KPI */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.kpi-card {
+  background-color: #0c0c0e;
+  border: 1px solid #1a1a1e;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.kpi-header {
+  display: flex;
+  justify-content: space-between;
+  color: #94949c;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.badge-live {
+  color: #00cc66;
+  font-weight: bold;
+}
+
+.kpi-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.kpi-change {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.kpi-change.positive { color: #00cc66; }
+.kpi-change.negative { color: #ff4d4d; }
+
+/* Secciones Comunes */
+.content-section {
+  background-color: #0c0c0e;
+  border: 1px solid #1a1a1e;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.view-all {
+  color: #ff6b00;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* Barra de Controles Internos */
+.controls-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.btn-control {
+  background-color: #16161a;
+  border: 1px solid #2e2e35;
+  color: #94949c;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Gráfico de Barras CSS Simulado */
+.chart-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.chart-timeline {
+  color: #64646c;
+  font-size: 0.85rem;
+}
+
+.bar-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 160px;
+  padding-top: 20px;
+}
+
+.bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.bar {
+  width: 70%;
+  max-width: 70px;
+  background: linear-gradient(to top, #ff6b00, #ff8533);
+  border-radius: 4px 4px 0 0;
+  min-height: 5px;
+}
+
+.bar-wrapper span {
+  font-size: 0.75rem;
+  color: #64646c;
+}
+
+/* Transacciones */
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  background-color: #121215;
+  border: 1px solid #1a1a1e;
+  padding: 14px 16px;
+  border-radius: 8px;
+}
+
+.tx-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #1c1c21;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.tx-details {
+  flex-grow: 1;
+}
+
+.tx-details h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.tx-details span {
+  color: #64646c;
+  font-size: 0.8rem;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 24px;
+}
+
+.status-badge.completed { background-color: #00cc661a; color: #00cc66; }
+.status-badge.pending { background-color: #ffaa001a; color: #ffaa00; }
+
+.tx-amount {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.tx-amount.positive { color: #00cc66; }
+.tx-amount.negative { color: #ffffff; }
+
+/* Alerta de Mantenimiento */
+.system-alert {
+  background-color: #16161a;
+  border: 1px solid #2e2e35;
+  padding: 14px 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #94949c;
+  margin-bottom: 24px;
+}
+
+.close-alert {
+  background: none;
+  border: none;
+  color: #64646c;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Tabla Analítica */
+.analytics-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.analytics-table th {
+  color: #64646c;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-bottom: 1px solid #1a1a1e;
+}
+
+.analytics-table td {
+  padding: 16px;
+  border-bottom: 1px solid #1a1a1e;
+  color: #cbd5e1;
+}
+
+/* Productos Destacados (Tarjetas inferiores) */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.product-card {
+  background-color: #121215;
+  border: 1px solid #1a1a1e;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.product-thumb {
+  height: 120px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* Colores simulados para los degradados de los productos */
+.product-thumb.gray { background: linear-gradient(135deg, #1f1f24, #111114); }
+.product-thumb.orange { background: linear-gradient(135deg, #4d2600, #1a0d00); }
+.product-thumb.green { background: linear-gradient(135deg, #003311, #001104); }
+
+.product-card h4 {
+  margin: 0 0 6px 0;
+  font-size: 0.95rem;
+}
+
+.product-card p {
+  margin: 0;
+  color: #64646c;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}

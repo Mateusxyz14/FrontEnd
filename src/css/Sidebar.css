@@ -1,0 +1,168 @@
+.sidebar {
+  width: 260px;
+  background-color: #0c0c0e;
+  border-right: 1px solid #1a1a1e;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 24px 16px;
+  z-index: 10;
+}
+
+.sidebar-brand {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding-left: 12px;
+}
+
+.brand-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ff6b00;
+  border-radius: 50%;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  color: #94949c;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+  background-color: #16161a;
+  color: #ffffff;
+}
+
+.menu-item.active {
+  background-color: #16161a;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.menu-icon {
+  font-size: 1.1rem;
+}
+
+/* Card Promocional */
+.promo-card {
+  background: linear-gradient(135deg, #1c1c21 0%, #121215 100%);
+  border: 1px solid #ff6b0033;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-icon {
+  background-color: #ff6b0022;
+  color: #ff6b00;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.promo-card h3 {
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin: 0 0 6px 0;
+}
+
+.promo-card p {
+  color: #94949c;
+  font-size: 0.8rem;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+.btn-upgrade {
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-upgrade:hover {
+  background-color: #e4e4e7;
+}
+
+/* Perfil de Usuario */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #1a1a1e;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #2e2e35;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.user-name {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.user-email {
+  color: #64646c;
+  font-size: 0.75rem;
+}
+
+.profile-arrow {
+  color: #64646c;
+  font-size: 0.7rem;
+}
