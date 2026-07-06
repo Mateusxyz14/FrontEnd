@@ -34,9 +34,10 @@ const FormularioCliente = ({ clienteAEditar, onClose, onGuardar, notificacion, a
       });
     } else {
       setForm({
-        nombre: "", telefono: "", email: "", direccion: "", tipo: "", estado: "", fecha_registro: "", cliente_idcliente: localStorage.getItem('idCliente')
+        nombre: "", telefono: "", email: "", direccion: "", tipo: "", estado: "", fecha_registro: "", id_cliente: localStorage.getItem('')
       });
     }
+
 
   }, [clienteAEditar]);
 
@@ -45,7 +46,7 @@ const FormularioCliente = ({ clienteAEditar, onClose, onGuardar, notificacion, a
     if (idForaneo && idForaneo !== "0") {
       setForm(estadoAnterior => ({
         ...estadoAnterior,
-        cliente_idcliente: idForaneo // Actualizamos el ID interno del formulario
+        id_cliente: idForaneo // Actualizamos el ID interno del formulario
       }));
     }
   }, [idForaneo]);
@@ -72,7 +73,7 @@ const FormularioCliente = ({ clienteAEditar, onClose, onGuardar, notificacion, a
     const method = clienteAEditar ? 'put' : 'post';
     // Si editamos, agregamos el ID a la URL. Si creamos, usamos la URL base.
     const url = clienteAEditar
-      ? urlApi + `cliente/${clienteAEditar.idcliente}`//Put
+      ? urlApi + `cliente/${clienteAEditar.id_cliente}`//Put
       : urlApi + 'cliente';//Post
 
     try {
@@ -155,7 +156,7 @@ const FormularioCliente = ({ clienteAEditar, onClose, onGuardar, notificacion, a
         <div className="form-group">
           <label>Fecha Registro:</label>
           <input
-            type="date" name="fecha_registro" value={form.fecha_registro} onChange={handleChange}
+            type="datetime-local" name="fecha_registro" value={form.fecha_registro} onChange={handleChange}
             required maxLength="10"
             className="form-control"
           />

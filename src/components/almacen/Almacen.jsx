@@ -19,19 +19,19 @@ class Almacen extends React.Component {
 
     mostrarModal: false,
 
-    empresaSeleccionada: null, // Estado para almacenar la empresa seleccionada para editar
+    almacenSeleccionada: null, // Estado para almacenar la empresa seleccionada para editar
   };
 
-  mostralModalNuevo = () => {
+  mostrarModalNuevo = () => {
     this.setState({
-      empresaSeleccionada: null, // Limpiar la empresa seleccionada al abrir el modal para un nuevo registro
+      almacenSeleccionada: null, // Limpiar la empresa seleccionada al abrir el modal para un nuevo registro
       mostrarModal: true,
     });
   };
 
   mostrarModalEditar = (id) => {
     this.setState({
-      empresaSeleccionada: id, // Establecer la empresa seleccionada para editar
+      almacenSeleccionada: id, // Establecer la empresa seleccionada para editar
       mostrarModal: true,
     });
   };

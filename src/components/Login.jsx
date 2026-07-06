@@ -9,7 +9,7 @@ import {
  MDBInput,
  MDBCheckbox
 } from 'mdb-react-ui-kit';
-import '../css/Login.css';
+//import '../css/Login.css';
 
 import { urlApi } from '../services/apirest';
 import {useNavigate} from 'react-router-dom';

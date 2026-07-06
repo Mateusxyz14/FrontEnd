@@ -15,6 +15,8 @@ import Empresa from './components/empresa/Empresa.jsx'
 
 import Almacen from './components/almacen/Almacen.jsx'
 
+import Clientes from './components/cliente/Cliente.jsx'
+
 import Header from './components/header/Header.jsx'
 
 
@@ -86,6 +88,16 @@ render() {
       </>
     } />
 
+
+    <Route path="/clientes" element={
+      <>
+        <Header />  
+
+        <div className="container mt-5">
+          <Clientes notificacion={this.notifiacion}/>
+        </div>
+      </>
+    } />
           
         </Routes>
       </Router>
