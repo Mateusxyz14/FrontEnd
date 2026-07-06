@@ -150,7 +150,7 @@ const FormularioEmpresa = ({ empresaAEditar, onClose, onGuardar, notificacion, a
         <div className="form-group">
           <label>Tipo de Empresa:</label>
           <input
-            type="text" name="tipo_empresa" value={form.tipo} onChange={handleChange}
+            type="text" name="tipo" value={form.tipo} onChange={handleChange}
             className="form-control"
           />
         </div>

@@ -126,6 +126,16 @@ const FormularioCliente = ({ clienteAEditar, onClose, onGuardar, notificacion, a
           />
         </div>
 
+
+        <div className="form-group">
+          <label>Email:</label>
+          <input
+            type="email" name="email" value={form.email} onChange={handleChange}
+            required maxLength="40"
+            className="form-control"
+          />
+        </div>
+
         <div className="form-group">
           <label>Direccion:</label>
           <input

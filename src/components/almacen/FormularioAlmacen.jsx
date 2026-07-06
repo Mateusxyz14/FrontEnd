@@ -191,8 +191,17 @@ const FormularioAlmacen = ({
             onChange={handleChange}
           >
             <option value="">---Seleccione---</option>
-            <option value="activo">activo</option>
-            <option value="inactivo">inactivo</option>
+            <option value="activo">
+operativo
+</option>
+            <option value="mantenimiento">
+mantenimiento
+</option>
+            <option value="cerrado">
+
+cerrado
+
+</option>
           </select>
         </div>
 

@@ -154,7 +154,7 @@ class Almacen extends React.Component {
           >
             Datos de Almacén
           </h1>
-          <button className="btn btn-success" onClick={this.mostralModalNuevo}>
+          <button className="btn btn-success" onClick={this.mostrarModalNuevo}>
             Nuevo registro
           </button>
 
