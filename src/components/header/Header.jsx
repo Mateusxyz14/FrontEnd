@@ -15,12 +15,13 @@ const Header = () => {
             </li>
             {/* Aquí tus compañeros agregarán sus links después */}
             <li className="nav-item">
-              <Link className="nav-link" to="/clientes">Clientes</Link>
+              <Link className="nav-link" to="/cliente">Clientes</Link>
             </li>
 
             <li className="nav-item">
               <Link className="nav-link" to="/almacen">Almacenes</Link>
             </li>
+
           </ul>
         </div>
       </div>
