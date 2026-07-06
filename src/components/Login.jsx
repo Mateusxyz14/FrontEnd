@@ -40,7 +40,7 @@ export default function Login() {
 
       // Navegar al dashboard
       //navigate("/dashboard");
-      navigate("/almacen");
+      navigate("/cliente");
       //navigate("/rutas");
     } catch (err) {
       setError(err.message);
