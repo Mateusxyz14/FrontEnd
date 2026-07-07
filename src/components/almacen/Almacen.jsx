@@ -6,7 +6,7 @@ import FormularioAlmacen from "../../components/almacen/FormularioAlmacen";
 
 class Almacen extends React.Component {
   //    componentDidMount() {
-  //      console.log("EMPRESA CARGADA");
+  //      console.log("ALMACEN CARGADO");
   //}
 
   state = {

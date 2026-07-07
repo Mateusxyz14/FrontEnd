@@ -7,12 +7,12 @@
         state = {
     form: {
         nombre: "",
-        telefono: "",
-        email: "",
-        password: "",  
         direccion: "",
-        tipo: "",
-        estado: ""
+        ciudad: "",
+        capacidad_m3: "",
+        id_empresa: "",
+        estado: "",
+        fecha_registro: ""
     }
 }
 
@@ -34,13 +34,13 @@
 
     const { notificacion } = this.props;
 
-    let url = urlApi + "empresa";
+    let url = urlApi + "almacen";
 
     axios
         .post(url, this.state.form)
         .then(response => {
 
-            notificacion("Empresa registrada correctamente");
+            notificacion("Almacen registrada correctamente");
 
             this.props.cerrarModal();
 
@@ -61,7 +61,7 @@
         render() {
             return (
                 <div className="container mt-4  dark bg-light p-4 rounded shadow">
-                    <h1 className="mb-4"> Ingrese su Nueva Empresa</h1>
+                    <h1 className="mb-4"> Ingrese su Nuevo almacen</h1>
 
                     <form>
 
@@ -76,38 +76,6 @@
     </div>
 
     <div className="mb-3">
-        <label>Teléfono</label>
-        <input
-            type="text"
-            className="form-control"
-            name="telefono"
-            onChange={this.manejadorOnChange}
-        />
-    </div>
-
-    <div className="mb-3">
-        <label>Email</label>
-        <input
-            type="email"
-            className="form-control"
-            name="email"
-            onChange={this.manejadorOnChange}
-        />
-    </div>
-
-    <div className="mb-3">
-        <label>Password</label>
-        <input
-            type="password"
-            className="form-control"
-            name="password"
-            onChange={this.manejadorOnChange}
-        />
-    </div>
-
-
-
-    <div className="mb-3">
         <label>Dirección</label>
         <input
             type="text"
@@ -118,11 +86,53 @@
     </div>
 
     <div className="mb-3">
-        <label>Tipo</label>
+        <label>Ciudad</label>
         <input
             type="text"
             className="form-control"
-            name="tipo"
+            name="ciudad"
+            onChange={this.manejadorOnChange}
+        />
+    </div>
+
+    <div className="mb-3">
+        <label>Capacidad (m³)</label>
+        <input
+            type="number"
+            className="form-control"
+            name="capacidad_m3"
+            onChange={this.manejadorOnChange}
+        />
+    </div>
+
+    <div className="mb-3">
+        <label>id empresa</label>
+        <input
+            type="number"
+            className="form-control"
+            name="id_empresa"
+            onChange={this.manejadorOnChange}
+        />
+    </div>
+
+
+
+    <div className="mb-3">
+        <label>Estado</label>
+        <input
+            type="text"
+            className="form-control"
+            name="estado"
+            onChange={this.manejadorOnChange}
+        />
+    </div>
+
+    <div className="mb-3">
+        <label>fecha registro</label>
+        <input
+            type="text"
+            className="form-control"
+            name="fecha_registro"
             onChange={this.manejadorOnChange}
         />
     </div>
