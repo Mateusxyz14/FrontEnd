@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { urlApi } from "../../service/apirest";
+import { urlApi } from "../../services/apirest";
 //import { SoloLetras } from '../../utils/validaciones';
 
 const FormularioAlmacen = ({
@@ -191,8 +191,17 @@ const FormularioAlmacen = ({
             onChange={handleChange}
           >
             <option value="">---Seleccione---</option>
-            <option value="activo">activo</option>
-            <option value="inactivo">inactivo</option>
+            <option value="activo">
+operativo
+</option>
+            <option value="mantenimiento">
+mantenimiento
+</option>
+            <option value="cerrado">
+
+cerrado
+
+</option>
           </select>
         </div>
 

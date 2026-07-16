@@ -3,25 +3,17 @@ import axios from 'axios';
 import { urlApi } from "../../services/apirest";
 //import { SoloLetras } from '../../utils/validaciones';
 
-const FormularioEmpresa = ({ 
-  empresaAEditar,
-  onClose,
-  onGuardar,
-  notificacion,
-  abrirModal,
-  datoForaneo, 
-  idForaneo }) => {
+const FormularioCliente = ({ clienteAEditar, onClose, onGuardar, notificacion, abrirModal, datoForaneo, idForaneo }) => {
 
   // 1. Estado inicial del formulario
   const [form, setForm] = useState({
     nombre: "",
-        telefono: "",
-        email: "",
-        password: "",  
-        direccion: "",
-        tipo: "",
-        estado: "",
-        fecha_registro: ""
+   telefono: "",
+   email: "",
+   direccion: "",
+   tipo: "",
+   estado: "",
+   fecha_registro: ""
   });
 
   const [error, setError] = useState('');
@@ -29,34 +21,32 @@ const FormularioEmpresa = ({
 
   // 2. useEffect: Detectar si estamos en modo EDICIÓN
   useEffect(() => {
-    if (empresaAEditar) {
+    if (clienteAEditar) {
 
       setForm({
-        ...empresaAEditar,
+        ...clienteAEditar,
         // Truco importante: SQL devuelve la fecha completa (ISO), pero el input type="date"
         // solo acepta el formato YYYY-MM-DD. Hacemos un split para cortarla.
-        //fecha_hora_alquiler: alquilerAEditar.fecha_hora_alquiler ? alquilerAEditar.fecha_hora_alquiler.split('T')[0] : ''
-        fecha_registro: empresaAEditar.fecha_registro
-          ? empresaAEditar.fecha_registro.slice(0, 16)
-          : '',
-       // fecha_hora_devolucion: empresaAEditar.fecha_hora_devolucion
-         // ? empresaAEditar.fecha_hora_devolucion.slice(0, 16)
-          //: ''
+        //fecha_hora_alquiler: clienteAEditar.fecha_hora_alquiler ? clienteAEditar.fecha_hora_alquiler.split('T')[0] : ''
+        fecha_registro: clienteAEditar.fecha_registro
+          ? clienteAEditar.fecha_registro.slice(0, 16)
+          : ''
       });
     } else {
       setForm({
-        nombre: '', telefono: '', email: '', password: '', direccion: '', tipo: '', estado: '', fecha_registro: '', id_empresa: localStorage.getItem('')
+        nombre: "", telefono: "", email: "", direccion: "", tipo: "", estado: "", fecha_registro: "", id_cliente: localStorage.getItem('')
       });
     }
 
-  }, [empresaAEditar]);
+
+  }, [clienteAEditar]);
 
   useEffect(() => {
     // Si idForaneo tiene un valor real (no es vacío ni "0")
     if (idForaneo && idForaneo !== "0") {
       setForm(estadoAnterior => ({
         ...estadoAnterior,
-        id_empresa: idForaneo // Actualizamos el ID interno del formulario
+        id_cliente: idForaneo // Actualizamos el ID interno del formulario
       }));
     }
   }, [idForaneo]);
@@ -80,11 +70,11 @@ const FormularioEmpresa = ({
     const token = localStorage.getItem('token');
 
     // Determinar si es POST (crear) o PUT (editar)
-    const method = empresaAEditar ? 'put' : 'post';
+    const method = clienteAEditar ? 'put' : 'post';
     // Si editamos, agregamos el ID a la URL. Si creamos, usamos la URL base.
-    const url = empresaAEditar
-      ? urlApi + `empresa/${empresaAEditar.id_empresa}`//Put
-      : urlApi + 'empresa';//Post
+    const url = clienteAEditar
+      ? urlApi + `cliente/${clienteAEditar.id_cliente}`//Put
+      : urlApi + 'cliente';//Post
 
     try {
       await axios({
@@ -95,7 +85,7 @@ const FormularioEmpresa = ({
       });
 
       // Si todo sale bien:
-      notificacion(empresaAEditar ? 'Empresa actualizada' : 'Empresa registrada');
+      notificacion(clienteAEditar ? 'Cliente actualizado' : 'Cliente registrado');
       onGuardar(); // Llamamos a la función del padre para recargar la tabla
       onClose();   // Cerramos el modal
 
@@ -113,7 +103,7 @@ const FormularioEmpresa = ({
 
   return (
     <div className="formulario-container">
-      <h3>{empresaAEditar ? 'Editar Empresa' : 'Nueva Empresa'}</h3>
+      <h3>{clienteAEditar ? 'Editar Cliente' : 'Nuevo Cliente'}</h3>
 
       {error && <p className="alert alert-danger">{error}</p>}
 
@@ -122,65 +112,62 @@ const FormularioEmpresa = ({
           <label>Nombre:</label>
           <input
             type="text" name="nombre" value={form.nombre} onChange={handleChange}
-            required
+            required maxLength="40"
             className="form-control"
           />
         </div>
 
         <div className="form-group">
-          <label>Telefono:</label>
+          <label>Teléfono:</label>
           <input
             type="text" name="telefono" value={form.telefono} onChange={handleChange}
-            required
+            required maxLength="10"
             className="form-control"
           />
         </div>
+
 
         <div className="form-group">
           <label>Email:</label>
           <input
             type="email" name="email" value={form.email} onChange={handleChange}
-            required
+            required maxLength="40"
             className="form-control"
           />
         </div>
 
         <div className="form-group">
-          <label>Dirección:</label>
+          <label>Direccion:</label>
           <input
             type="text" name="direccion" value={form.direccion} onChange={handleChange}
-            required
+            required maxLength="40"
             className="form-control"
           />
         </div>
 
         <div className="form-group">
-          <label>Tipo de Empresa:</label>
+          <label>Tipo:</label>
           <input
             type="text" name="tipo" value={form.tipo} onChange={handleChange}
+            required maxLength="10"
             className="form-control"
           />
         </div>
 
         <div className="form-group">
           <label>Estado:</label>
-          <select
+          <input
+            type="text" name="estado" value={form.estado} onChange={handleChange}
+            required maxLength="20"
             className="form-control"
-            name="estado"
-            value={form.estado}
-            onChange={handleChange}
-          >
-            <option value="">---Seleccione---</option>
-            <option value="activo">activo</option>
-            <option value="inactivo">inactivo</option>
-          </select>
+          />
         </div>
 
-
         <div className="form-group">
-          <label>Fecha de Registro:</label>
+          <label>Fecha Registro:</label>
           <input
             type="datetime-local" name="fecha_registro" value={form.fecha_registro} onChange={handleChange}
+            required maxLength="10"
             className="form-control"
           />
         </div>
@@ -199,4 +186,4 @@ const FormularioEmpresa = ({
   );
 };
 
-export default FormularioEmpresa;
+export default FormularioCliente;
